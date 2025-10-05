@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback Form</title>
+  <style>
+    /* ---------- Page Styling ---------- */
+    body {
+      font-family: 'Poppins', sans-serif;
+     background-color: lightblue;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ---------- Feedback Container ---------- */
+    .feedback-container {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 40px 30px;
+      width: 380px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feedback-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .feedback-container h2 {
+      text-align: center;
+      color: #004e92;
+      margin-bottom: 25px;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    /* ---------- Labels & Inputs ---------- */
+    label {
+      font-weight: 600;
+      color: #222;
+      display: block;
+      margin-top: 15px;
+      font-size: 15px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px 8px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 15px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    /* ---------- Submit Button ---------- */
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #004e92, #000428);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #000428, #004e92);
+      transform: scale(1.05);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 480px) {
+      .feedback-container {
+        width: 90%;
+        padding: 25px 20px;
+      }
+      .feedback-container h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="feedback-container">
+    <h2>Feedback Form</h2>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="rating">Rate Us</label>
+      <select id="rating" required>
+        <option value="">--Select--</option>
+        <option value="Excellent">Excellent</option>
+        <option value="Good">Good</option>
+        <option value="Average">Average</option>
+        <option value="Poor">Poor</option>
+      </select>
+
+      <label for="message">Your Feedback</label>
+      <textarea id="message" placeholder="Write your feedback..." required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const rating = document.getElementById("rating").value;
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !rating || !message) {
+        alert("⚠️ Please fill all the fields");
+        return;
+      }
+      alert("✅ Thank you for your feedback, " + name + "!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
+

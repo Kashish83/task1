@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HealthCare Solutions</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* ========== GLOBAL STYLES ========== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fafc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h5 {
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      background-color: #0077b6;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand, .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: #caf0f8 !important;
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      background: url("https://i.pinimg.com/736x/d2/d8/04/d2d80404f4e6a658e2353211b174a16b.jpg") center/cover no-repeat;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* align-items: flex-end; */
+      text-align:right;
+      padding: 80px 100px;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: whitesmoke;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      text-align:left;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: black;
+      font-size: 1.1rem;
+      text-align:left;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+
+    /* ========== ABOUT US ========== */
+    #about {
+      background-color: #f0faff;
+      padding: 80px 0;
+    }
+
+#about img {
+  border-radius: 12px;
+  width: 80%;
+  max-height: 350px;     /* limits height */
+     /* entire image fits inside box */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  
+  margin-bottom: 20px;
+}
+    #about h2 {
+      color: #0077b6;
+      font-weight: 700;
+    }
+
+    #about p {
+      color: #555;
+      font-size: 1.05rem;
+    }
+
+    #about .btn {
+      background-color: #0077b6;
+      color: #fff;
+      border: none;
+    }
+
+    #about .btn:hover {
+      background-color: #023e8a;
+    }
+
+    /* ========== SERVICES ========== */
+    #services h2 {
+      color: #0077b6;
+      font-weight: 700;
+    }
+
+    .service-card {
+      background-color: #0077b6;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      background-color: #023e8a;
+    }
+
+    /* ========== HEALTH TIPS ========== */
+    #health-tips h2 {
+      color: #0077b6;
+      font-weight: 700;
+    }
+
+    .tip-card {
+      background-color: #e0f7fa;
+      border: none;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-5px);
+      background-color: #caf0f8;
+    }
+
+    .tip-card i {
+      font-size: 2rem;
+      color: #0077b6;
+      margin-bottom: 10px;
+    }
+
+    /* ========== DOCTORS ========== */
+    #doctors h2 {
+      color: #0077b6;
+    }
+
+    #doctors .card {
+      border: none;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    #doctors .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    #doctors .card-title {
+      font-weight: 700;
+      color: #0077b6;
+    }
+
+    #doctors .btn {
+      background-color: #0077b6;
+      border: none;
+    }
+
+    #doctors .btn:hover {
+      background-color: #023e8a;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background-color: #0077b6;
+      color: white;
+      padding: 25px 0;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        align-items: center;
+        text-align: center;
+        padding: 60px 20px;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">HealthCare</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Your Health, Our Priority</h1>
+    <p>Providing expert medical care with compassion and excellence. Your well-being is at the heart of everything we do.</p>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about" class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="https://i.pinimg.com/736x/9e/88/ed/9e88ed6e51f53c0e67693fab3ad606c1.jpg" alt="About Us">
+      </div>
+      <div class="col-md-6">
+        <h2>About HealthCare Solutions</h2>
+        <p>We are dedicated to improving lives through advanced healthcare services. Our mission is to make quality medical care accessible and affordable for everyone. With expert doctors, modern facilities, and patient-first values, we ensure you get the best treatment possible.</p>
+        <a href="aboutus.html" class="btn btn-primary mt-3">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="container my-5">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card service-card p-4 text-center">
+          <h5><i class="fas fa-stethoscope mb-2"></i><br>General Consultation</h5>
+          <p>Comprehensive health checkups and personalized care for all age groups.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card p-4 text-center">
+          <h5><i class="fas fa-ambulance mb-2"></i><br>Emergency Care</h5>
+          <p>24/7 medical support with expert care and fast response during emergencies.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card p-4 text-center">
+          <h5><i class="fas fa-user-md mb-2"></i><br>Specialist Care</h5>
+          <p>Expert advice from specialists in pediatrics, orthopedics, cardiology, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEALTH TIPS -->
+  <section id="health-tips" class="container my-5">
+    <h2 class="text-center mb-4">Health Tips</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="tip-card">
+          <i class="fas fa-tint"></i>
+          <h5>Stay Hydrated</h5>
+          <p>Drink at least 8 glasses of water daily to keep your body hydrated.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="tip-card">
+          <i class="fas fa-apple-alt"></i>
+          <h5>Eat Healthy</h5>
+          <p>Include fruits, veggies, and whole grains in your meals for overall wellness.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="tip-card">
+          <i class="fas fa-bed"></i>
+          <h5>Get Enough Sleep</h5>
+          <p>Sleep 7–8 hours every night to rejuvenate your mind and body.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTORS -->
+  <section id="doctors" class="container my-5">
+    <h2 class="text-center mb-4">Meet Our Doctors</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center p-3">
+          <img src="https://i.pinimg.com/736x/6c/59/95/6c599523460f54ddeba81f3cd689ae04.jpg" class="card-img-top rounded-circle mx-auto" alt="Dr. Alice Smith" style="width:150px; height:150px; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">Dr. Alice Smith</h5>
+            <p class="card-text text-muted">Cardiologist</p>
+            <a href="#appointments" class="btn btn-primary">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center p-3">
+          <img src="https://i.pinimg.com/736x/50/01/6a/50016a8c9ef67cd3dbf61f9097cbf942.jpg" class="card-img-top rounded-circle mx-auto" alt="Dr. John Doe" style="width:150px; height:150px; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">Dr. John Doe</h5>
+            <p class="card-text text-muted">Pediatrician</p>
+            <a href="#appointments" class="btn btn-primary">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 text-center p-3">
+          <img src="https://i.pinimg.com/736x/d1/d0/e9/d1d0e96a1eab481bd86b74c791d26738.jpg" class="card-img-top rounded-circle mx-auto" alt="Dr. Rekha" style="width:150px; height:150px; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">Dr. Rekha</h5>
+            <p class="card-text text-muted">Orthopedic</p>
+            <a href="#appointments" class="btn btn-primary">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>HealthCare Solutions | 123 Wellness Street | City, State | contact@healthcare.com</p>
+    <p>&copy; 2025 HealthCare Solutions. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
